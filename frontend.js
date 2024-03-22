@@ -1,4 +1,3 @@
-
 const socket = new WebSocket("ws://localhost:6060");
 socket.onmessage = (event) => {
     term.write(event.data);
@@ -6,7 +5,12 @@ socket.onmessage = (event) => {
 }
 
 var term = new window.Terminal({
-    cursorBlink: true
+    cursorBlink: true,
+    theme: {
+        foreground: '#ccc',
+        background: '#002b36',
+        cursor: 'help'
+    }
 });
 term.open(document.getElementById('terminal'));
 

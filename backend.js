@@ -12,6 +12,9 @@ var ptyProcess = pty.spawn(shell, [], {
     //   cwd: process.env.HOME,
     env: process.env,
 });
+
+// ptyProcess.write('ollama run mistral:latest\r');
+
 wss.on('connection', ws => {
     console.log("new session")
 
@@ -30,10 +33,10 @@ wss.on('connection', ws => {
     });
 })
 
-const commandProcessor = function(command) {
+const commandProcessor = function (command) {
     return command;
 }
 
-const outputProcessor = function(output) {
+const outputProcessor = function (output) {
     return output;
 }
